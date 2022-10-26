@@ -26,10 +26,37 @@
     display: grid;
     margin: 100px auto 0;
     justify-content: center;
-    width: 80%;
 }
 
 .form-elements {
     display: flex;
     justify-content: center;
+}
+
+@media only screen and (max-width: 1230px) {
+    .main__title {
+        font-size: 38px;
+    }
+    .main__subtitle {
+        font-size: 16px;
+    }
+}
+
+@media only screen and (max-width: 640px) {
+    .main__title {
+        font-size: 24px;
+        text-align: center;
+    }
+    .main__subtitle {
+        font-size: 14px;
+    }
+
+}
+
+@media only screen and (max-width: 420px) {
+   
+    .form-elements {
+        display: flex;
+        flex-direction: column-reverse;
+    }
 }
