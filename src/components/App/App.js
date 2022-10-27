@@ -10,11 +10,14 @@ import { getEmployees } from '../../utils/EmployeeApi';
 function App() {
   const inputEl = useRef(null);
   const [title, setTitle] = useState('LOOKING FOR AN EMPLOYEE?');
-  const [subTitle, setSubTitle] = useState('Click on the search bar to learn our suggestions');
+  const [subTitle, setSubTitle] = useState(
+    'Click on the search bar to learn our suggestions'
+  );
   const [employeesList, setemployeesList] = useState({});
   const [suggestions, setSuggestions] = useState({});
   const [showSuggestions, setShowSuggestions] = useState(false);
   const [showResults, setShowResults] = useState(false);
+  const [term, setTerm] = useState('');
 
   useEffect(() => {
     getEmployees()
@@ -27,6 +30,7 @@ function App() {
   }, []);
 
   const onChangeHandler = (text) => {
+    setTerm(text);
     setShowResults(false);
     setShowSuggestions(true);
     setTitle('LOOKING FOR AN EMPLOYEE?');
@@ -42,20 +46,18 @@ function App() {
           );
         });
     }
-
     setSuggestions(matches);
   };
 
-  const onHandleSubmit =(e) => {
+  const onHandleSubmit = (e) => {
     e.preventDefault();
-    if(suggestions.length > 0) {
+    if (suggestions.length > 0) {
       setShowSuggestions(false);
       setShowResults(true);
       setTitle('SEARCH RESULTS');
       setSubTitle('');
-
     }
-  }
+  };
 
   return (
     <div className='App'>
@@ -74,7 +76,12 @@ function App() {
                   placeholder='Search...'
                   onChange={(e) => onChangeHandler(e.target.value)}
                 />
-                <SuggestionsList className='suggestions__list' employeesList={suggestions} show={showSuggestions}/>
+                <SuggestionsList
+                  className='suggestions__list'
+                  employeesList={suggestions}
+                  show={showSuggestions}
+                  term={term}
+                />
               </div>
               <Button
                 title='Search'
@@ -83,9 +90,12 @@ function App() {
               />
             </div>
           </SearchForm>
-         
         </div>
-        <SuggestionsList className='suggestions__results' employeesList={suggestions} show={showResults}/>
+        <SuggestionsList
+          className='suggestions__results'
+          employeesList={suggestions}
+          show={showResults}
+        />
       </div>
     </div>
   );
