@@ -24,5 +24,5 @@
 To run the site loacly, run the following command
 
 ```bash
-  git clone git@github.com:avi413/web_project_4.git
+  git clone https://github.com/avi413/autocomplete_frontend.git
 ```
