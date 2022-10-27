@@ -1,0 +1,48 @@
+@import '../../Variables/Variables.scss';
+
+.suggestions {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    margin-top: -25px;
+    max-height:400px;
+    border-radius: 0 0 20px 20px;
+    overflow:hidden; overflow-y:auto;
+}
+
+.suggestions__item {
+    background: $grayColor;
+    border-top: 1px solid $whiteColor;
+}
+
+.suggestions__item:hover {
+    background: $weakGrayColor;
+}
+
+.suggestions__item:first-child {
+    padding-top: 25px;
+}
+
+.card { 
+    padding: 15px 25px;
+    display: flex;
+    gap: 25px;
+}
+
+.card__img {
+    border-radius: 50px;
+    width: 80px;
+    height: 80px;
+}
+.card__container {
+    color: $blackColor;
+}
+
+.card__title {
+    margin: 10px 0;
+}
+
+.suggestions__item:last-child {
+    border-radius: 0 0 20px 20px;
+}
+

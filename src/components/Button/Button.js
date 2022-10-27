@@ -3,7 +3,7 @@ import Search from '../../media/search.png';
 function Button(props) {
   const { className, onClick } = props;
   return (
-    <button className={`button ${className}`} onClick={onClick}>
+    <button className='button' onClick={onClick}>
       <img src={Search} className='button__icon' alt='search icon' />
     </button>
   );
