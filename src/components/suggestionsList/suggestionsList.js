@@ -1,29 +1,24 @@
 import './SuggestionsList.scss';
-import React, { useState } from 'react';
 
-function SuggestionsList({ userInput, onClick, className, suggestion,employeesList }) {
-  const [ShowSuggestions, setShowSuggestions] = useState('');
-  const [FilteredSuggestions, setFilteredSuggestions] = useState('');
-  const [ActiveSuggestion, setActiveSuggestion] = useState('');
+function SuggestionsList({ onClick, employeesList, show,className }) {
 
-
-
+  
   return (
-    <ul className='suggestions'>
-        <li className='suggestions__item' key={suggestion} onClick={onClick}>
-        <div className='card'>
-          <img className="card__img" src='https://randomuser.me/api/portraits/med/men/2.jpg'  alt='card-img' />
-          <div className="card__container">
-            <h4 className="card__title">
-              <b>John Doe</b>
-            </h4>
-            <p className="card__subtitle">Architect & Engineer</p>
-          </div>
-        </div>
-      </li>
-      
-      
-    
+    show && <ul className={`suggestions ${className}`}>
+      {employeesList.length > 0 &&
+        employeesList.map((data) => (
+          <li className='suggestions__item' key={data._id} onClick={onClick}>
+            <div className='card'>
+              <img className='card__img' src={data.ImageUrl} alt='card-img' />
+              <div className='card__container'>
+                <h4 className='card__title'>
+                  <b>{data.Name}</b>
+                </h4>
+                <p className='card__subtitle'>{data.WorkTitle}</p>
+              </div>
+            </div>
+          </li>
+        ))}
     </ul>
   );
 }
