@@ -9,20 +9,35 @@ import { getEmployees } from '../../utils/EmployeeApi';
 
 function App() {
   const inputEl = useRef(null);
-  const [employeesList, setemployeesList] = useState({})
-  const handleClick = (event) => {};
+  const [employeesList, setemployeesList] = useState({});
+  const [Suggestions, setSuggestions] = useState({});
 
   useEffect(() => {
     getEmployees()
-    .then(data => {
-      setemployeesList(data);
-    })
-    .catch((e) => {
-      console.log(e);
-    })
- 
-  }, [])
-  console.log(employeesList);
+      .then((data) => {
+        setemployeesList(data);
+      })
+      .catch((e) => {
+        console.log(e);
+      });
+  }, []);
+
+  const onChangeHandler = (text) => {
+    let matches = [];
+    if (text.length > 1) {
+      matches =
+        employeesList.length > 0 &&
+        employeesList.filter((item) => {
+          return (
+            item.Name.toLowerCase().includes(text.toLowerCase()) ||
+            item.WorkTitle.toLowerCase().includes(text.toLowerCase())
+          );
+        });
+    }
+
+    setSuggestions(matches);
+  };
+
   return (
     <div className='App'>
       <ParticlesBackground />
@@ -33,17 +48,17 @@ function App() {
           <p className='main__subtitle'>
             Click on the search bar to learn our suggestions
           </p>
-          <SearchForm handleClick={handleClick}>
+          <SearchForm>
             <div className='form-elements'>
               <div className='search-form__continer'>
                 <input
                   ref={inputEl}
                   className='search-form__input'
-                  placeholder='Enter topic'
+                  placeholder='Search...'
+                  onChange={(e) => onChangeHandler(e.target.value)}
                 />
-                <SuggestionsList employeesList={employeesList} />
+                <SuggestionsList employeesList={Suggestions} />
               </div>
-
               <Button
                 title='Search'
                 className='button_type_blue search-form__button'
