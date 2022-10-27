@@ -17,6 +17,7 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
+    "deploy": "react-scripts build && scp -r ./build/* avi413@autocomplete.avidalal.net:/home/avi413/frontend",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
