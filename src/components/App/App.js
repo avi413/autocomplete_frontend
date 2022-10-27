@@ -83,8 +83,9 @@ function App() {
               />
             </div>
           </SearchForm>
-          <SuggestionsList className='suggestions__results' employeesList={suggestions} show={showResults}/>
+         
         </div>
+        <SuggestionsList className='suggestions__results' employeesList={suggestions} show={showResults}/>
       </div>
     </div>
   );
