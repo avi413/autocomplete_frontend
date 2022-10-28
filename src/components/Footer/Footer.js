@@ -4,7 +4,7 @@ import GithubLogo from '../../media/github.png';
 
 function Footer() {
   return (
-    <footer>
+    <footer className='footer'>
       <nav className='navigation'>
         <a
           className='navigation__link'

@@ -7,21 +7,23 @@
     overflow:hidden; overflow-y:auto;
     border-radius: 20px;
     background: $grayColor;
+
 }
 
 .list{
-    
     max-height:400px;
 }
+
 .suggestions__list{
     margin-top: -35px;
-
 }
 
 .suggestions__results {
     margin: 30px auto 0;
     max-width: 85%;
     border-radius: 20px;
+    z-index: 10;
+    position: relative;
 }
 
 .suggestions__item {
