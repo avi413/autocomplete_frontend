@@ -26,7 +26,6 @@ function SuggestionsList({ onClick, employeesList, show, className, term }) {
                       </b>
                     </h4>
                     <p className='card__subtitle'>
-                      {' '}
                       <Highlighted text={data.WorkTitle} highlight={term} />
                     </p>
                   </div>
