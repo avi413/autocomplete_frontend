@@ -26,6 +26,8 @@
     display: grid;
     margin: 100px auto 0;
     justify-content: center;
+    position: inherit;
+    z-index: 1;
 }
 
 .form-elements {

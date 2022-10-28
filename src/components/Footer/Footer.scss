@@ -2,9 +2,9 @@
 
 .navigation {
     display: flex;
-    position: absolute;
+    position: fixed;
     bottom: 0px;
-    padding-bottom: 20px;
+    padding: 10px 0;
     width: 100%;
     margin: auto;
     justify-content: center;
