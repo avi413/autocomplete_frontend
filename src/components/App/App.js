@@ -5,6 +5,7 @@ import Header from '../Header/Header';
 import SearchForm from '../SearchForm/SearchForm';
 import Button from '../Button/Button';
 import SuggestionsList from '../suggestionsList/suggestionsList';
+import Footer from '../Footer/Footer';
 import { getEmployees } from '../../utils/EmployeeApi';
 
 function App() {
@@ -97,6 +98,7 @@ function App() {
           show={showResults}
         />
       </div>
+      <Footer />
     </div>
   );
 }

@@ -1,0 +1,27 @@
+@import '../../Variables/Variables.scss';
+
+.navigation {
+    display: flex;
+    position: absolute;
+    bottom: 0px;
+    padding-bottom: 20px;
+    right: 25%;
+    left: 50%;
+    margin-left: -150px;
+}
+
+.navigation__link {
+    display: flex;
+    align-items: center;
+    background-color: $grayColor;
+    border-radius: 15px;
+    padding: 5px 10px;
+    text-decoration: none;
+    color: $blackColor;
+    font-weight: 600;
+    margin-right: 20px;
+}
+
+.navigation__link-icon {
+    width: 40px;
+}
