@@ -1,5 +1,39 @@
 @import '../../Variables/Variables.scss';
 
+
+/* Buttons */
+::-webkit-scrollbar-button:single-button {
+    border-radius: 50px;
+    height: 20px;
+    width: 16px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: black;
+    border-radius: 5px;
+}
+
+/* Track */
+::-webkit-scrollbar {
+    width: 10px;
+
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #888;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
 .search-form {
     position: relative;
     min-width: 100%;
@@ -15,6 +49,7 @@
     font-size: 16px;
     font-weight: 400;
     line-height: 22px;
+    position: relative;
 }
 
 .search-form__input:focus {
@@ -24,6 +59,6 @@
 
 @media only screen and ($maxTablet) {
     .search-form__input {
-        width: 100%; 
+        width: 100%;
     }
 }

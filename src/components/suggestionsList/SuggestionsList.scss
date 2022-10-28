@@ -6,11 +6,13 @@
     list-style: none;
     max-height:400px;
     overflow:hidden; overflow-y:auto;
+    border-radius: 0 0 20px 20px;
+    background: $grayColor;
 }
 
 .suggestions__list{
     margin-top: -25px;
-    border-radius: 0 0 20px 20px;
+
 }
 
 .suggestions__results {
