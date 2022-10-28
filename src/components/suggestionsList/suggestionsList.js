@@ -1,11 +1,11 @@
 import './SuggestionsList.scss';
 
 function SuggestionsList({ onClick, employeesList, show, className, term }) {
-  console.log(term);
+  let listType = className === 'suggestions__list' ? 'list' : 'result';
   return (
     show && (
       <div className={`${className}`}>
-        <ul className='suggestions'>
+        <ul className={`suggestions ${listType}`}>
           {employeesList.length > 0 &&
             employeesList.map((data) => (
               <li
