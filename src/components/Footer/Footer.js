@@ -8,7 +8,7 @@ function Footer() {
       <nav class='navigation'>
         <a
           class='navigation__link'
-          href='https://github.com/avi413/autocomplete_frontend'
+          href='https://github.com/avi413/Autocomplete_backend'
         >
           <img src={GithubLogo} className='navigation__link-icon' alt='logo' />
           Backend repository
