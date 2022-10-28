@@ -5,9 +5,9 @@
     position: absolute;
     bottom: 0px;
     padding-bottom: 20px;
-    right: 25%;
-    left: 50%;
-    margin-left: -150px;
+    width: 100%;
+    margin: auto;
+    justify-content: center;
 }
 
 .navigation__link {
@@ -19,7 +19,7 @@
     text-decoration: none;
     color: $blackColor;
     font-weight: 600;
-    margin-right: 20px;
+    margin: 0 10px;
 }
 
 .navigation__link-icon {
